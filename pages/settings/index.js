@@ -51,7 +51,7 @@ export default function Settings({ initFromTabbar }) {
 								Source Code
 							</a>
 							<Link href="/settings/privacy">
-								<a className={styles.link}>Datenschutzklärung</a>
+								<a className={styles.link}>Datenschutzerklärung</a>
 							</Link>
 							<Link href="/settings/disclosure">
 								<a className={styles.link}>Impressum</a>
