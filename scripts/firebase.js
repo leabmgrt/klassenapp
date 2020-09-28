@@ -15,6 +15,8 @@ export default firebase;
 
 import fb from "firebase";
 
+console.log(process.env);
+
 const firebaseConfig = {
 	apiKey: process.env.FB_APIKEY,
 	authDomain: process.env.FB_AUTHDOMAIN,

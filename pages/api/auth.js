@@ -2,7 +2,6 @@ const jwt = require("jsonwebtoken");
 import firebase from "../../scripts/firebase";
 
 export default async (req, res) => {
-	console.log(req);
 	if (typeof req.body.token !== "string")
 		return res.status(400).json({ err: "badRequest" });
 
