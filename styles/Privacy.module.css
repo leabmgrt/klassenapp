@@ -1,0 +1,11 @@
+.mainFrame {
+	margin: 16px;
+	margin-top: 32px;
+}
+
+.link {
+	color: #2980b9;
+	text-decoration: underline;
+	text-decoration-color: #2980b9;
+	margin-right: 16px;
+}

@@ -1,0 +1,25 @@
+.card {
+	border-radius: 25px;
+	background-color: #e74c3c;
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	margin-bottom: 16px;
+	width: 40%;
+	text-align: center;
+}
+
+.footer {
+	position: absolute;
+	bottom: 70px;
+	width: 100%;
+	margin: 16px;
+}
+
+.link {
+	color: #2980b9;
+	text-decoration: underline;
+	text-decoration-color: #2980b9;
+	margin-right: 16px;
+}
