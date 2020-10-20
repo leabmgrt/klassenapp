@@ -22,7 +22,7 @@ export default async (req, res) => {
 		!snapshot.data().session ||
 		snapshot.data().session !== token.session
 	)
-		return res.status(400).json({ err: "badAuthorization" });
+		return res.status(401).json({ err: "badAuthorization" });
 
 	return res.status(200).json(snapshot.data());
 };

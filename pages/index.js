@@ -188,6 +188,6 @@ export default function NavigationManager({ selection, p }) {
 NavigationManager.getInitialProps = async (ctx) => {
 	const { query } = ctx;
 	if (query.hasOwnProperty("p") && pages.hasOwnProperty(query.p))
-		return { selection: query.p, p: query.p };
+		return { selection: parseInt(query.p), p: query.p };
 	return { selection: 0, p: null };
 };
