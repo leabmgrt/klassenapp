@@ -27,7 +27,7 @@ export default function Settings({ initFromTabbar }) {
 								onClick={() => {
 									const sessionToken = getCookie("token");
 									axios
-										.get("/api/logout", {
+										.post("https://klassenapi.abmgrt.dev/session/delete", {}, {
 											headers: {
 												Authorization: sessionToken,
 											},

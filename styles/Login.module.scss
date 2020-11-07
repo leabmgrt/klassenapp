@@ -1,0 +1,47 @@
+.mainFrame {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.signInButtonDiv {
+	margin-top: 8px;
+}
+
+.selectObject {
+	margin-top: 50px;
+	min-width: 120px;
+}
+
+@media (prefers-color-scheme: dark) {
+	.mainFrame {
+		color: white;
+	}
+	.textfield {
+		label {
+			color: white;
+		}
+		input {
+			color: white;
+		}
+		color: white;
+		border-bottom: 1px solid white !important;
+	}
+
+	.classformcontrol {
+		label {
+			color: white;
+		}
+		color: white;
+		border-bottom: 1px solid white !important;
+	}
+
+	.selectObject {
+		color: white;
+		div {
+			color: white;
+		}
+	}
+}

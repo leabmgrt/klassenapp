@@ -4,7 +4,7 @@ import { AppBar, Toolbar, IconButton, Typography } from "@material-ui/core";
 import Page from "../../components/Page";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { makeStyles } from "@material-ui/core/styles";
-import styles from "../../styles/Privacy.module.css";
+import styles from "../../styles/Privacy.module.scss";
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -24,7 +24,7 @@ export default function PrivacyPolicy() {
 	return (
 		<MainPage>
 			<div>
-				<AppBar position="fixed" color="inherit">
+				<AppBar position="fixed" color="inherit" className={styles.appbar}>
 					<Toolbar>
 						<IconButton
 							edge="start"

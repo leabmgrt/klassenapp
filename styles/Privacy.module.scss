@@ -1,0 +1,29 @@
+.mainFrame {
+	margin: 16px;
+	margin-top: 32px;
+}
+
+.link {
+	color: #2980b9;
+	text-decoration: underline;
+	text-decoration-color: #2980b9;
+	margin-right: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+	.appbar {
+		background-color: #111 !important;
+
+		p {
+			color: white;
+		}
+
+		svg {
+			color: white;
+		}
+	}
+
+	.mainFrame {
+		color: white;
+	}
+}

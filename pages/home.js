@@ -13,14 +13,14 @@ export default function Home({ initFromTabbar }) {
 		if (initFromTabbar != true) router.push("/?p=0");
 		const sessionToken = getCookie("token");
 		if (sessionToken == undefined) router.push("/login");
-		axios
+		/*axios
 			.get("/api/home")
 			.then(({ data }) => {
 				setData(data);
 			})
 			.catch((error) => {
 				alert(error);
-			});
+			});*/
 	}, []);
 
 	return (

@@ -4,10 +4,11 @@ import axios from "axios";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { makeStyles } from "@material-ui/core/styles";
 import { useRouter } from "next/router";
-import styles from "../../styles/homework/HomeworkDetail.module.css";
+import styles from "../../styles/homework/HomeworkDetail.module.scss";
 import addLineBreaks from "../../scripts/addLineBreaks";
 import { get as getCookie } from "es-cookie";
 import MainPage from "../../components/MainPage";
+import moment from "moment";
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -30,7 +31,7 @@ export default function CalendarDetail({ id, returnPath }) {
 		const sessionToken = getCookie("token");
 		if (sessionToken == undefined) router.push("/login");
 		axios
-			.get(`/api/calendar/${id}`, {
+			.get(`https://klassenapi.abmgrt.dev/calendar/${id}`, {
 				headers: {
 					Authorization: sessionToken,
 				},
@@ -49,7 +50,7 @@ export default function CalendarDetail({ id, returnPath }) {
 	return (
 		<MainPage>
 			<div>
-				<AppBar position="fixed" color="inherit">
+				<AppBar position="fixed" color="inherit" className={styles.appbar}>
 					<Toolbar>
 						<IconButton
 							edge="start"
@@ -84,10 +85,10 @@ export default function CalendarDetail({ id, returnPath }) {
 								{calendarData.hasOwnProperty("enddate") &&
 								calendarData.enddate != null ? (
 									<b>
-										{calendarData.startdate} - {calendarData.enddate}
+										{moment(calendarData.startdate).format("DD.MM.YYYY HH:mm")} - {moment(calendarData.enddate).format("DD.MM.YYYY HH:mm")}
 									</b>
 								) : (
-									<b>{calendarData.startdate}</b>
+									<b>{moment(calendarData.startdate).format("DD.MM.YYYY HH:mm")}</b>
 								)}
 							</h3>
 							<div className={styles.description}>

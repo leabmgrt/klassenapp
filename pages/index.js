@@ -1,6 +1,6 @@
 import { BottomNavigation, BottomNavigationAction } from "@material-ui/core";
 import Head from "next/head";
-import styles from "../styles/Navigation.module.css";
+import styles from "../styles/Navigation.module.scss";
 import HomeIcon from "@material-ui/icons/Home";
 import BookIcon from "@material-ui/icons/Book";
 import TodayIcon from "@material-ui/icons/Today";
@@ -112,7 +112,7 @@ export default function NavigationManager({ selection, p }) {
 					}}
 					className={styles.bottomNavigation}
 				>
-					<BottomNavigationAction label="Home" icon={<HomeIcon />} />
+					<BottomNavigationAction label="Home" icon={<HomeIcon className={styles.bottomIcon} />} />
 					<BottomNavigationAction label="Hausaufgaben" icon={<BookIcon />} />
 					<BottomNavigationAction label="Kalender" icon={<TodayIcon />} />
 					<BottomNavigationAction

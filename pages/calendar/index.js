@@ -6,21 +6,25 @@ import Link from "next/link";
 import styles from "../../styles/Calendar.module.css";
 import { get as getCookie } from "es-cookie";
 import MainPage from "../../components/MainPage";
+import moment from "moment";
 
 export default function Calendar({ initFromTabbar }) {
 	const router = useRouter();
 	const [calendarData, setcalendarData] = useState(null);
+
 	useEffect(() => {
+		console.log(initFromTabbar)
 		if (initFromTabbar != true) router.push("/?p=2");
 		const sessionToken = getCookie("token");
 		if (sessionToken == undefined) router.push("/login");
 		axios
-			.get("/api/calendar", {
+			.get("https://klassenapi.abmgrt.dev/class/calendar", {
 				headers: {
 					Authorization: sessionToken,
 				},
 			})
 			.then(({ data }) => {
+				data.sort((a, b) => parseFloat(moment(a.startdate).valueOf()) - parseFloat(moment(b.startdate).valueOf()));
 				setcalendarData(data);
 			})
 			.catch((error) => {
@@ -38,8 +42,8 @@ export default function Calendar({ initFromTabbar }) {
 				{initFromTabbar ? (
 					<div>
 						{calendarData != null ? (
-							calendarData.events.length > 0 ? (
-								calendarData.events.map((event) => (
+							calendarData.length > 0 ? (
+								calendarData.map((event) => (
 									<Link
 										key={event.id}
 										href={`/calendar/${event.id}?return=/calendar`}
@@ -49,11 +53,11 @@ export default function Calendar({ initFromTabbar }) {
 												{event.hasOwnProperty("enddate") &&
 												event.enddate != null ? (
 													<p className={styles.eventSubtitle}>
-														{event.startdate} - {event.enddate}
+														{moment(event.startdate).format("DD.MM.YYYY HH:mm")} - {moment(event.enddate).format("DD.MM.YYYY HH:mm")}
 													</p>
 												) : (
 													<p className={styles.eventSubtitle}>
-														{event.startdate}
+														{moment(event.startdate).format("DD.MM.YYYY HH:mm")}
 													</p>
 												)}
 											</HomeCard>

@@ -4,14 +4,9 @@ export default async (authorization) => {
 	if (typeof authorization !== "string") return false;
 
 	try {
-		const url =
-			process.env.NEXT_URL === undefined
-				? "/api/auth"
-				: `${process.env.NEXT_URL}/api/auth`;
-		const response = await axios.post(url, {
-			token: authorization,
-		});
-		return response.data.hasOwnProperty("session");
+		const url = `https://klassenapi.abmgrt.dev/session/${authorization}`
+		const response = await axios.get(url);
+		return response.data.hasOwnProperty("id");
 	} catch (err) {
 		console.log(err);
 		return false;

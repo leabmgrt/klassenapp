@@ -1,4 +1,5 @@
 import Head from "next/head";
+import styles from "../styles/MainPage.module.css"
 
 export default function MainPage({ children }) {
 	return (
@@ -34,6 +35,7 @@ export default function MainPage({ children }) {
 				<link rel="apple-touch-icon" href="/apple-icon.png"></link>
 				<meta name="theme-color" content="#317EFB" />
 			</Head>
+			
 			{children}
 		</div>
 	);

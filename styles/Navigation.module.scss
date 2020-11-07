@@ -132,3 +132,12 @@
 .mainFrame {
 	margin-bottom: 65px;
 }
+
+@media (prefers-color-scheme: dark) {
+	.bottomNavigation {
+		background-color: #111 !important;
+		button {
+			color: white;
+		}
+	}
+}

@@ -6,7 +6,9 @@ export default function Page({ title, subtitle, children }) {
 			<h1>{title}</h1>
 			{subtitle != null ? <h3>{subtitle}</h3> : <div></div>}
 			<hr className="solid" />
+			
 			{children}
+	
 		</div>
 	);
 }

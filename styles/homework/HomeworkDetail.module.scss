@@ -1,0 +1,26 @@
+.mainFrame {
+	margin: 16px;
+	margin-top: 32px;
+}
+
+.description {
+	white-space: pre-wrap;
+}
+
+@media (prefers-color-scheme: dark) {
+	.appbar {
+		background-color: #111 !important;
+
+		p {
+			color: white;
+		}
+
+		svg {
+			color: white;
+		}
+	}
+
+	.mainFrame {
+		color: white;
+	}
+}
